@@ -7,8 +7,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FE9B747F-6B2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{FD58B05A-1168-47E2-83B6-CB56CA1890E1}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Notes.Database", "src\Notes.Database\Notes.Database.sqlproj", "{0D346240-32A2-409D-A155-7CA489BFB682}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notes.DataAccess", "src\Notes.DataAccess\Notes.DataAccess.csproj", "{870FAACB-1601-42B9-8178-9BA36CDD0676}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notes.BusinessLogic", "src\Notes.BusinessLogic\Notes.BusinessLogic.csproj", "{4B693AAD-122E-45A3-8DDE-EE10EDFDD877}"
@@ -27,12 +25,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0D346240-32A2-409D-A155-7CA489BFB682}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0D346240-32A2-409D-A155-7CA489BFB682}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0D346240-32A2-409D-A155-7CA489BFB682}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{0D346240-32A2-409D-A155-7CA489BFB682}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0D346240-32A2-409D-A155-7CA489BFB682}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0D346240-32A2-409D-A155-7CA489BFB682}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{870FAACB-1601-42B9-8178-9BA36CDD0676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{870FAACB-1601-42B9-8178-9BA36CDD0676}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{870FAACB-1601-42B9-8178-9BA36CDD0676}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -62,7 +54,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{0D346240-32A2-409D-A155-7CA489BFB682} = {FE9B747F-6B2A-48B2-9957-CF93B47A48A8}
 		{870FAACB-1601-42B9-8178-9BA36CDD0676} = {FE9B747F-6B2A-48B2-9957-CF93B47A48A8}
 		{4B693AAD-122E-45A3-8DDE-EE10EDFDD877} = {FE9B747F-6B2A-48B2-9957-CF93B47A48A8}
 		{30F02C21-63E6-4FF2-900D-71C1ACCA6514} = {FE9B747F-6B2A-48B2-9957-CF93B47A48A8}
