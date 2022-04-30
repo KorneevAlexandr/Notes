@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ModelsDTO.Models;
 using Notes.BusinessLogic.Intefaces.Services;
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Notes.NoteApi.Controllers
@@ -19,7 +21,14 @@ namespace Notes.NoteApi.Controllers
 		[HttpGet("getNotes")]
 		public async Task<IActionResult> GetAll()
 		{
-			var notes = _noteService.GetAll();
+			IEnumerable<NoteDto> notes = null;
+			try
+			{
+				notes = _noteService.GetAll();
+			}
+			catch (Exception ex)
+			{ 
+			}
 			await Task.CompletedTask;
 			return Ok(notes);
 		}
