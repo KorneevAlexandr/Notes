@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 
 namespace Notes.DataAccess.Repositories
 {
-	internal class Repository<T> : IRepository<T>
+	public class Repository<T> : IRepository<T>
 		where T : class
 	{
 		private readonly NoteDbContext _context;
