@@ -41,7 +41,7 @@ namespace Notes.IntegrationTests.ServiceTests
 			var notes = _service.GetAll().ToList();
 
 			// Assert
-			_service.Delete(notes[notes.Count - 2].Id);
+			_service.Delete(notes[notes.Count - 1].Id);
 			Assert.IsNotNull(notes.FirstOrDefault(note => note.Title.Equals(note.Title)));
 		}
 
