@@ -33,5 +33,5 @@ jobs:
       run: dotnet build --no-restore 
     - name: Test
       env: 
-        ConnectionStrings_TestDatabase: Server=localhost;Database=NotesGit;User=sa;Password=Pass~w0r8
+        ConnectionStrings_DefaultConnection: Server=localhost;Database=NotesGit;User=sa;Password=Pass~w0r8
       run: dotnet test --no-build
