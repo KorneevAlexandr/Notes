@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ModelsDTO\ModelsDTO.csproj" />
+    <ProjectReference Include="..\Notes.DataAccess\Notes.DataAccess.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,14 @@
+﻿@model ModelsDTO.Models.NoteDto;
+
+<form method="post" asp-action="Create">
+	<label>Title</label>
+	<input name="Title" />
+
+	<label>Description</label>
+	<input name="Description" />
+
+	<label>Content</label>
+	<input name="Content" />
+
+	<input type="submit" asp-action="Create"/>
+</form>

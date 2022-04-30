@@ -1,0 +1,24 @@
+﻿@model IEnumerable<ModelsDTO.Models.NoteDto>;
+
+<a asp-action="Create">Create</a>
+<br />
+<h2>All notes: </h2>
+<br />
+
+@foreach (var note in Model)
+{
+	<h4>@note.Title</h4>
+	<p>@note.Description</p>
+
+	<form method="post" asp-action="Delete">
+		<input type="hidden" name="id" value="@note.Id" />
+		<input type="submit" asp-action="Delete" value="Delete" />
+	</form>
+
+	<form method="get" asp-action="Note">
+		<input type="hidden" name="id" value="@note.Id" />
+		<input type="submit" asp-action="Note" value="Read" />
+	</form>
+
+	<hr />
+}
