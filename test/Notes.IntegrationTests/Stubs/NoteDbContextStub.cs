@@ -5,7 +5,7 @@ namespace Notes.IntegrationTests.Stubs
 {
     public class NoteDbContextStub : DbContext
     {
-        private readonly string _connectionString = "server=localhost;Database=NotesGit;Integrated Security=False;User=kura;Password=W~08irasa";
+        private readonly string _connectionString = "server=localhost,1433;Database=NotesGit;Integrated Security=False;User=kura;Password=W~08irasa";
 
         public NoteDbContextStub()
         { 
