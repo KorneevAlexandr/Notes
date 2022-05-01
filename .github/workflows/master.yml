@@ -13,7 +13,7 @@ jobs:
       sql.data:
         image: mcr.microsoft.com/mssql/server:2019-latest
         env:
-          KURA_PASSWORD: W~08irasa
+          SA_PASSWORD: W~08irasa
           ACCEPT_EULA: Y
         ports:
           - "1433:1433"
@@ -36,5 +36,5 @@ jobs:
       run: dotnet build --no-restore 
     - name: Test
       env: 
-        ConnectionStrings_TestDatabase: server=localhost;Database=NotesGit;User ID = kura;Password=W~08irasa
+        ConnectionStrings_TestDatabase: server=localhost;User ID = sa;Password=W~08irasa
       run: dotnet test --no-build
