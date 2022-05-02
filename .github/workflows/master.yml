@@ -7,23 +7,31 @@ on:
     branches: [ master ]
 
 jobs:
-  builds:
+  build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Install SQL Server
         uses: Particular/install-sql-server-action@main
         with:
           connection-string-env-var: SQL_SERVER_CONNECTION_STRING
-          catalog: nservicebus
+          catalog: CiCd
       - name: Create schemas
         shell: pwsh
         run: |
             echo "Create additional schemas"
-            sqlcmd -Q "CREATE SCHEMA receiver AUTHORIZATION db_owner" -d "nservicebus"
-            sqlcmd -Q "CREATE SCHEMA sender AUTHORIZATION db_owner" -d "nservicebus"
-            sqlcmd -Q "CREATE SCHEMA db@ AUTHORIZATION db_owner" -d "nservicebus"  
-      
+            sqlcmd -Q "CREATE SCHEMA receiver AUTHORIZATION db_owner" -d "CiCd"
+            sqlcmd -Q "CREATE SCHEMA sender AUTHORIZATION db_owner" -d "CiCd"
+            sqlcmd -Q "CREATE SCHEMA db@ AUTHORIZATION db_owner" -d "CiCd"
+      - uses: actions/checkout@v3
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+      - name: Sleep for 5sec
+        uses: jakejarvis/wait-action@master
+        with: 
+          time: '5s'    
+
       - name: Restore dependencies
         run: dotnet restore
 
@@ -31,5 +39,5 @@ jobs:
         run: dotnet build --no-restore 
       - name: Test
         env: 
-          ConnectionStrings_TestDatabase: server=localhost;User=kura;Password=W~08irasa
+          ConnectionStrings_TestDatabase: ${{env.SQL_SERVER_CONNECTION_STRING}}
         run: dotnet test --no-build
